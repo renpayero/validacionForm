@@ -25,85 +25,92 @@ var validarFormulario = (e) => {
 			break
 		case 'email':
 			if (expresiones.emailRegex.test(e.target.value)){ //test y match sirven para este caso, devuelven true o false si se cumple la expresion regular
-				document.getElementById('grupo-email').classList.remove('formulario-incorrecto')
-				document.getElementById('grupo-email').classList.add('formulario-correcto')
-				document.getElementById('grupo-email').appendChild(textP_correct)
-				document.getElementById('grupo-email').removeChild(textP_incorrect)
+				document.getElementById('email-correcto').style.display = 'flex'
+				document.getElementById('email-incorrecto').style.display = 'none'
 			}
 			else {
-				document.getElementById('grupo-nombre').classList.add('formulario-incorrecto')
-				document.getElementById('grupo-nombre').classList.remove('formulario-correcto')
-				document.getElementById('grupo-nombre').appendChild(textP_incorrect)
-				document.getElementById('grupo-nombre').removeChild(textP_correct)
+				document.getElementById('email-incorrecto').style.display = 'flex'
+				document.getElementById('email-correcto').style.display = 'none'
 			}
 			break
 		case 'contrasena':
 			if (expresiones.contraseñaRegex.test(e.target.value)){ //test y match sirven para este caso, devuelven true o false si se cumple la expresion regular
-				document.getElementById('grupo-contrasena').classList.remove('formulario-incorrecto')
+				document.getElementById('contrasena-correcto').style.display = 'flex'
+				document.getElementById('contrasena-incorrecto').style.display = 'none'
 			}
 			else {
-				document.getElementById('grupo-nombre').classList.add('formulario-incorrecto')
-				document.getElementById('grupo-nombre').classList.remove('formulario-correcto')
-				document.getElementById('grupo-nombre').appendChild(textP_incorrect)
-				document.getElementById('grupo-nombre').removeChild(textP_correct)
+				document.getElementById('contrasena-incorrecto').style.display = 'flex'
+				document.getElementById('contrasena-correcto').style.display = 'none'
 			}
 			break
 		case 'repetir-contrasena':
 			if (document.getElementById('repetir-contrasena').value == document.getElementById('contrasena').value){ 
-				document.getElementById('grupo-repetir--contrasena').classList.remove('formulario-incorrecto')
-				console.log('se quita el rojo')
+				document.getElementById('repetir-contrasena-correcto').style.display = 'flex'
+				document.getElementById('repetir-contrasena-incorrecto').style.display = 'none'
 			}
 			else {
-				console.log('se pinta de rojo')
-				document.getElementById('grupo-repetir--contrasena').classList.add('formulario-incorrecto')
+				document.getElementById('repetir-contrasena-incorrecto').style.display = 'flex'
+				document.getElementById('repetir-contrasena-correcto').style.display = 'none'
 			}
 			break
 		case 'edad':
 			if (expresiones.edadRegex.test(e.target.value)){ //test y match sirven para este caso, devuelven true o false si se cumple la expresion regular
-				document.getElementById('grupo-edad').classList.remove('formulario-incorrecto')
+				document.getElementById('edad-correcto').style.display = 'flex'
+				document.getElementById('edad-incorrecto').style.display = 'none'
 			}
 			else {
-				document.getElementById('grupo-edad').classList.add('formulario-incorrecto')
+				document.getElementById('edad-incorrecto').style.display = 'flex'
+				document.getElementById('edad-correcto').style.display = 'none'
 			}
 			break
 		case 'telefono':
 			if (expresiones.telefonoRegex.test(e.target.value)){ //test y match sirven para este caso, devuelven true o false si se cumple la expresion regular
-				document.getElementById('grupo-telefono').classList.remove('formulario-incorrecto')
+				document.getElementById('telefono-correcto').style.display = 'flex'
+				document.getElementById('telefono-incorrecto').style.display = 'none'
 			}
 			else {
-				document.getElementById('grupo-telefono').classList.add('formulario-incorrecto')
+				document.getElementById('telefono-incorrecto').style.display = 'flex'
+				document.getElementById('telefono-correcto').style.display = 'none'
 			}
 			break
 		case 'direccion':
 			if (expresiones.direccionRegex.test(e.target.value)){ //test y match sirven para este caso, devuelven true o false si se cumple la expresion regular
-				document.getElementById('grupo-direccion').classList.remove('formulario-incorrecto')
+				document.getElementById('direccion-correcto').style.display = 'flex'
+				document.getElementById('direccion-incorrecto').style.display = 'none'
 			}
 			else {
-				document.getElementById('grupo-direccion').classList.add('formulario-incorrecto')
+				document.getElementById('direccion-incorrecto').style.display = 'flex'
+				document.getElementById('direccion-correcto').style.display = 'none'
 			}
 			break
 		case 'ciudad':
 			if (expresiones.ciudadRegex.test(e.target.value)){ //test y match sirven para este caso, devuelven true o false si se cumple la expresion regular
-				document.getElementById('grupo-ciudad').classList.remove('formulario-incorrecto')
+				document.getElementById('ciudad-correcto').style.display = 'flex'
+				document.getElementById('ciudad-incorrecto').style.display = 'none'
 			}
 			else {
-				document.getElementById('grupo-ciudad').classList.add('formulario-incorrecto')
+				document.getElementById('ciudad-incorrecto').style.display = 'flex'
+				document.getElementById('ciudad-correcto').style.display = 'none'
 			}
 			break
 		case 'codigo-postal':
 			if (expresiones.codigoPostalRegex.test(e.target.value)){ //test y match sirven para este caso, devuelven true o false si se cumple la expresion regular
-				document.getElementById('grupo-codigo--postal').classList.remove('formulario-incorrecto')
+				document.getElementById('codigo-postal-correcto').style.display = 'flex'
+				document.getElementById('codigo-postal-incorrecto').style.display = 'none'
 			}
 			else {
-				document.getElementById('grupo-codigo--postal').classList.add('formulario-incorrecto')
+				document.getElementById('codigo-postal-incorrecto').style.display = 'flex'
+				document.getElementById('codigo-postal-correcto').style.display = 'none'
 			}
 			break
 		case 'dni':
 			if (expresiones.dniRegex.test(e.target.value)){ //test y match sirven para este caso, devuelven true o false si se cumple la expresion regular
-				document.getElementById('grupo-dni').classList.remove('formulario-incorrecto')
+				document.getElementById('dni-correcto').style.display = 'flex'
+				document.getElementById('dni-incorrecto').style.display = 'none'
 			}
 			else {
-				document.getElementById('grupo-dni').classList.add('formulario-incorrecto')
+				document.getElementById('dni-incorrecto').style.display = 'flex'
+				document.getElementById('dni-correcto').style.display = 'none'
 			}
 			break
 	}
@@ -114,6 +121,6 @@ inputs.forEach((i)=>{
 	i.addEventListener('blur', validarFormulario)
 })
 
-formulario.addEventListener("sumbit", (e) =>{
-	e.preventDefault()
+formulario.addEventListener("sumbit", (r) =>{
+	r.preventDefault()
 })
