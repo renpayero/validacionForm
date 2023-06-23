@@ -9,12 +9,13 @@ const expresiones = {
 	codigoPostalRegex : /^.{3,}$/,
 	dniRegex : /^\d{7,8}$/,
 }
-
+var inputs = document.querySelectorAll('input')
 
 var validarFormulario = (e) => {
 	switch(e.target.name){
 		case 'nombre':
-			if (expresiones.nombreCompletoRegex.test(e.target.value)){ //test y match sirven para este caso, devuelven true o false si se cumple la expresion regular
+			document.getElementById('titulo-nombre').textContent = 'Hola ' + e.target.value + '!';
+			if (expresiones.nombreCompletoRegex.test(e.target.value)){ //test y match sirven para este caso, devuelven true o false si se cumple la expresion regular\
 				document.getElementById('nombre-correcto').style.display = 'flex'
 				document.getElementById('nombre-incorrecto').style.display = 'none'
 			}
@@ -115,6 +116,11 @@ var validarFormulario = (e) => {
 			break
 	}
 }
+
+
+function actualizarTitulo(nombre) {
+	document.getElementById('titulo-nombre').textContent = 'Hola ' + nombre;
+  }
 
 inputs.forEach((i)=>{
 	i.addEventListener('keyup', validarFormulario)
