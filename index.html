@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Hola</h2>
+    <form id="formulario">
+      <div class="form-group" id="grupo-nombre">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <p id="nombre-correcto" class="validacion-correcta"><strong>¡El campo esta completado correctacmente!</strong></p>
+        <p id="nombre-incorrecto" class="validacion-incorrecta"><strong>¡El campo esta completado incorrectacmente!</strong></p>
+      </div>
+      <div class="form-group" id="grupo-email">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <p id="email-correcto" class="validacion-correcta"><strong>¡El campo esta completado correctacmente!</strong></p>
+        <p id="email-incorrecto" class="validacion-incorrecta"><strong>¡El campo esta completado incorrectacmente!</strong></p>
+      </div>
+      <div class="form-group" id="grupo-contrasena">
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required>
+        <p id="contrasena-correcta" class="validacion-correcta"><strong>¡El campo esta completado correctacmente!</strong></p>
+        <p id="contrasena-incorrecta" class="validacion-incorrecta"><strong>¡El campo esta completado incorrectacmente!</strong></p>
+      </div>
+      <div class="form-group" id="grupo-repetir--contrasena">
+        <label for="repetir-contrasena">Repetir contraseña:</label>
+        <input type="password" id="repetir-contrasena" name="repetir-contrasena" required>
+        <p id="repetir-contrasena-correcta" class="validacion-correcta"><strong>¡El campo esta completado correctacmente!</strong></p>
+        <p  id="repetir-contrasena-incorrecta" class="validacion-incorrecta"><strong>¡El campo esta completado incorrectacmente!</strong></p>
+      </div>
+      <div class="form-group" id="grupo-edad">
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" required>
+        <p id="edad-correcta" class="validacion-correcta"><strong>¡El campo esta completado correctacmente!</strong></p>
+        <p id="edad-incorrecta" class="validacion-incorrecta"><strong>¡El campo esta completado incorrectacmente!</strong></p>
+      </div>
+      <div class="form-group" id="grupo-telefono">
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required>
+        <p id="telefono-correcto" class="validacion-correcta"><strong>¡El campo esta completado correctacmente!</strong></p>
+        <p id="telefono-incorrecto" class="validacion-incorrecta"><strong>¡El campo esta completado incorrectacmente!</strong></p>
+      </div>
+      <div class="form-group" id="grupo-direccion">
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" required>
+        <p id="direccion-correcta" class="validacion-correcta"><strong>¡El campo esta completado correctacmente!</strong></p>
+        <p id="direccion-incorrecta" class="validacion-incorrecta"><strong>¡El campo esta completado incorrectacmente!</strong></p>
+      </div>
+      <div class="form-group" id="grupo-ciudad">
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad" name="ciudad" required>
+        <p id="ciudad-correcta" class="validacion-correcta"><strong>¡El campo esta completado correctacmente!</strong></p>
+        <p id="ciudad-incorrecta" class="validacion-incorrecta"><strong>¡El campo esta completado incorrectacmente!</strong></p>
+      </div>
+      <div class="form-group" id="grupo-codigo--postal">
+        <label for="codigo-postal">Código Postal:</label>
+        <input type="text" id="codigo-postal" name="codigo-postal" required>
+        <p id="codigo-postal-correcto" class="validacion-correcta"><strong>¡El campo esta completado correctacmente!</strong></p>
+        <p id="codigo-postal-incorrecto" class="validacion-incorrecta"><strong>¡El campo esta completado incorrectacmente!</strong></p>
+      </div>
+      <div class="form-group" id="grupo-dni">
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni" name="dni" required>
+        <p id="dni-correcto" class="validacion-correcta"><strong>¡El campo esta completado correctacmente!</strong></p>
+        <p id="dni-incorrecto" class="validacion-incorrecta"><strong>¡El campo esta completado incorrectacmente!</strong></p>
+      </div>
+      <div class="form-group" id="grupo-sumbit">
+        <button type="submit">Enviar</button>
+      </div>
+    </form>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
