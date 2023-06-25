@@ -10,6 +10,8 @@ const expresiones = {
 	dniRegex : /^\d{7,8}$/,
 }
 var inputs = document.querySelectorAll('input')
+var sumbit = document.querySelector('button')
+var formulario = document.querySelector('form')
 
 var validarFormulario = (e) => {
 	switch(e.target.name){
@@ -117,16 +119,104 @@ var validarFormulario = (e) => {
 	}
 }
 
-
-function actualizarTitulo(nombre) {
-	document.getElementById('titulo-nombre').textContent = 'Hola ' + nombre;
-  }
-
 inputs.forEach((i)=>{
 	i.addEventListener('keyup', validarFormulario)
 	i.addEventListener('blur', validarFormulario)
 })
+// sumbit.addEventListener('click', function(){
+// 	var mensajeAlert= "Los datos se han enviado exitosamente! Los datos son los siguiente:\nNombre Completo: " + 
+// 	document.getElementById("nombre").value +
+// 	 "\nEmail: " + document.getElementById("email").value+ 
+// 	 "\nContraseña: " + document.getElementById("contrasena").value +
+// 	 "\nEdad: " + document.getElementById("edad").value + 
+// 	 "\nTelefono: " + document.getElementById("telefono").value +
+// 	 "\nDireccion: " + document.getElementById("direccion").value + 
+// 	 "\nCiudad: " + document.getElementById("ciudad").value + 
+// 	 "\nCodigo postal: " + document.getElementById("codigo-postal").value +
+// 	 "\nDNI: " + document.getElementById("dni").value
+// 	alert(mensajeAlert)
+// })
 
-formulario.addEventListener("sumbit", (r) =>{
-	r.preventDefault()
-})
+
+formulario.addEventListener("submit", function(evento) {
+	evento.preventDefault();
+  
+	var nombreCompleto = document.getElementById("nombre").value;
+	var email = document.getElementById("email").value;
+	var contraseña = document.getElementById("contrasena").value;
+	var edad = document.getElementById("edad").value;
+	var telefono = document.getElementById("telefono").value;
+	var direccion = document.getElementById("direccion").value;
+	var ciudad = document.getElementById("ciudad").value;
+	var codigoPostal = document.getElementById("codigo-postal").value;
+	var dni = document.getElementById('dni').value;
+  
+	var nombreCompletoRegex = /^(?=.*\s).{6,}$/;
+	var emailRegex = /^\S+@\S+\.\S+$/;
+	var contraseñaRegex = /^(?=.*[a-zA-Z])(?=.*\d).{8,}$/;
+	var edadRegex = /^18|[1-9][0-9]$/;
+	var telefonoRegex = /^\d{7,}$/;
+	var direccionRegex = /^(?=.*\s)[a-zA-Z0-9\s]{5,}$/;
+	var ciudadRegex = /^.{3,}$/;
+	var codigoPostalRegex = /^.{3,}$/;
+	var dniRegex = /^\d{7,8}$/;
+  
+	if (!nombreCompletoRegex.test(nombreCompleto)) {
+	  alert("El nombre completo es inválido");
+	  return;
+	}
+  
+	if (!emailRegex.test(email)) {
+	  alert("El correo electrónico es inválido");
+	  return;
+	}
+  
+	if (!contraseñaRegex.test(contraseña)) {
+	  alert("La contraseña es inválida");
+	  return;
+	}
+  
+	if (!edadRegex.test(edad)) {
+	  alert("La edad es inválida");
+	  return;
+	}
+  
+	if (!telefonoRegex.test(telefono)) {
+	  alert("El teléfono es inválido");
+	  return;
+	}
+  
+	if (!direccionRegex.test(direccion)) {
+	  alert("La dirección es inválida");
+	  return;
+	}
+  
+	if (!ciudadRegex.test(ciudad)) {
+	  alert("La ciudad es inválida");
+	  return;
+	}
+  
+	if (!codigoPostalRegex.test(codigoPostal)) {
+	  alert("El código postal es inválido");
+	  return;
+	}
+  
+	if (!dniRegex.test(dni)) {
+	  alert("El DNI es inválido");
+	  return;
+	}
+  
+	var mensajeAlert = "Los datos se han enviado exitosamente! Los datos son los siguientes:\n" +
+	  "Nombre Completo: " + nombreCompleto +
+	  "\nEmail: " + email +
+	  "\nContraseña: " + contraseña +
+	  "\nEdad: " + edad +
+	  "\nTeléfono: " + telefono +
+	  "\nDirección: " + direccion +
+	  "\nCiudad: " + ciudad +
+	  "\nCódigo Postal: " + codigoPostal +
+	  "\nDNI: " + dni;
+  
+	alert(mensajeAlert);
+	formulario.submit();
+  });
