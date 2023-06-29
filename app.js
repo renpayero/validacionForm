@@ -223,4 +223,61 @@ formulario.addEventListener("submit", function(evento) {
   
 	alert(mensajeAlert)
 	formulario.submit()
+	//enviar datos al servidor
+	var valores = {
+		nombreCompleto: document.getElementById("nombre").value,
+		email: document.getElementById("email").value,
+		contraseña: document.getElementById("contrasena").value,
+		repetirContraseña: document.getElementById("repetir-contrasena").value,
+		edad: document.getElementById("edad").value,
+		telefono: document.getElementById("telefono").value,
+		direccion: document.getElementById("direccion").value,
+		ciudad: document.getElementById("ciudad").value,
+		codigoPostal: document.getElementById("codigo-postal").value,
+		dni: document.getElementById("dni").value
+	  }
+	fetch("https://jsonplaceholder.typicode.com/", { //envia los valores al servidor
+		method: "GET", //especifica el metodo que usa (el metodo get no es recomendable ya que muestra los datos en la url y es menos seguro)
+		body: valores //valores enviados
+	})
+	.then(function(respuesta) { //la variable respuesta representa la respuesta del sv
+		// Verifica si la respuesta del servidor es exitosa
+		if (respuesta.ok) { //verifica que no se hayan perdido datos
+			return response.json(); //.json convierte el la respuesta del servidor que es dada en binario a datos legibles
+		} else {
+			throw new Error("Error en la respuesta del servidor."); //si respuesta.ok es false lanza un error
+		}
+	})
+	.then(function(data) {
+		// Maneja los datos de respuesta del servidor
+		console.log(data);
+	})
+	.catch(function(error) {
+		// Maneja los errores de la solicitud
+		console.log(error);
+	});
   })
+
+// // Obtén el modal y el botón para cerrarlo
+// var modal = document.querySelector(".modal");
+// var closeButton = document.querySelector(".close");
+
+// // Función para mostrar el modal
+// function mostrarModal() {
+//   modal.style.display = "block";
+// }
+
+// // Función para ocultar el modal
+// function ocultarModal() {
+//   modal.style.display = "none";
+// }
+
+// // Agrega un manejador de eventos al botón para cerrar el modal
+// closeButton.addEventListener("click", ocultarModal);
+
+// // Agrega un manejador de eventos al documento para cerrar el modal al hacer clic fuera del contenido del modal
+// window.addEventListener("click", function(event) {
+//   if (event.target === modal) {
+//     ocultarModal();
+//   }
+// });
